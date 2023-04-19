@@ -28,16 +28,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'spambox92@yandex.ru'
-# EMAIL_HOST_PASSWORD = 'VMfqPumX2Y9h0TA4hPvk'
-EMAIL_HOST_PASSWORD = 'ttimfizdxcpepyzy'
-EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_USER = 'devbox@list.ru'
+DEFAULT_FROM_EMAIL = 'devbox@list.ru' # обязательно
+EMAIL_HOST_PASSWORD = 'VMfqPumX2Y9h0TA4hPvk'
+# EMAIL_HOST_PASSWORD = 'ttimfizdxcpepyzy'
+EMAIL_PORT = 465
 
 DJOSER = {
-    'PASSWORD_RESET_CONFIRM_URL': '/password/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': '/activate/{uid}/{token}',
+    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {},
 }
