@@ -38,6 +38,7 @@ EMAIL_HOST_PASSWORD = 'VMfqPumX2Y9h0TA4hPvk'
 EMAIL_PORT = 465
 
 DJOSER = {
+    'LOGIN_FIELD': 'email',
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
@@ -46,7 +47,7 @@ DJOSER = {
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=10),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=20),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=20)
 }
 
 REST_FRAMEWORK = {
@@ -71,6 +72,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'api',
+    'account',
 
     'rest_framework',
     'djoser'
@@ -158,3 +160,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Auth
+AUTH_USER_MODEL = 'account.User'
