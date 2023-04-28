@@ -78,12 +78,14 @@ INSTALLED_APPS = [
     'account',
 
     'rest_framework',
-    'djoser'
+    'djoser',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -166,3 +168,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Auth
 AUTH_USER_MODEL = 'account.User'
+
+# Cors
+CORS_ALLOWED_ORIGINS = [
+    'http://mynet.ru'
+]

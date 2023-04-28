@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='file',
-            field=models.FileField(blank=True, upload_to='files', validators=[authdjango.validators.file_validator]),
+            field=models.FileField(blank=True, upload_to='files', validators=[authdjango.validators.FileValidator]),
         ),
     ]
