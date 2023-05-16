@@ -37,6 +37,11 @@ EMAIL_HOST_PASSWORD = 'VMfqPumX2Y9h0TA4hPvk'
 # EMAIL_HOST_PASSWORD = 'ttimfizdxcpepyzy'
 EMAIL_PORT = 465
 
+
+DOMAIN = 'prom.moscow'
+SITE_NAME = 'Prom.moscow'
+
+
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',

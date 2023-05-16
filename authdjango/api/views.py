@@ -21,11 +21,12 @@ class ProductViewSet(mixins.CreateModelMixin,
 
 def test(request):
     """ Сообщение на почту через Джанго """
-    email = EmailMessage(
-        'Test Header',
-        'Test Message',
-        settings.EMAIL_HOST_USER,
-        ['spambox92@yandex.ru']
-    )
-    email.fail_silently = False
-    email.send()
+    print(request.is_secure())
+    # email = EmailMessage(
+    #     'Test Header',
+    #     'Test Message',
+    #     settings.EMAIL_HOST_USER,
+    #     ['spambox92@yandex.ru']
+    # )
+    # email.fail_silently = False
+    # email.send()
