@@ -27,16 +27,27 @@ SECRET_KEY = 'django-insecure-o82x$m)x(oi+-#erlwm@v9xlnw326_y8ris5)dlwplk&o3cru=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # EMAIL_USE_TLS = True
-EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_HOST_USER = 'devbox@list.ru'
-DEFAULT_FROM_EMAIL = 'devbox@list.ru' # обязательно
-EMAIL_HOST_PASSWORD = 'VMfqPumX2Y9h0TA4hPvk'
-# EMAIL_HOST_PASSWORD = 'ttimfizdxcpepyzy'
-EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+# EMAIL_HOST = 'mail.ephnov.com'
+# EMAIL_HOST_USER = 'CMSautopass@ephnov.com'
+# DEFAULT_FROM_EMAIL = 'CMSautopass@ephnov.com' # обязательно
+# EMAIL_HOST_PASSWORD = 'X0mz,.+k[1ZC'
+# # EMAIL_HOST_PASSWORD = 'ttimfizdxcpepyzy'
+# EMAIL_PORT = 995
+EMAIL_BACKEND = 'django_imap_backend.ImapBackend'
+EMAIL_IMAP_SECRETS = [
+    {
+        'HOST': 'mail.ephnov.com',
+        'PORT': 993,  # default 143 and for SSL 993
+        'USER': 'CMSautopass@ephnov.com',
+        'PASSWORD': 'X0mz,.+k[1ZC',
+        'MAILBOX': 'CMSautopass@ephnov.com',  # Created if not exists
+        'SSL': True  # Default
+    }
+]
 
 
 DOMAIN = 'prom.moscow'
@@ -74,8 +85,6 @@ REST_FRAMEWORK = {
 # Application definition
 
 INSTALLED_APPS = [
-    'grappelli',
-    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -88,8 +97,6 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'djoser',
-    # 'corsheaders',
-    'tinymce',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'

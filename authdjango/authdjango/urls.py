@@ -16,19 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from filebrowser.sites import site
+# from filebrowser.sites import site
 from django.conf.urls.static import static
 from django.conf import settings
 
-site.directory = "uploads/"
+# site.directory = "uploads/"
 
 urlpatterns = [
-    path('admin/filebrowser/', site.urls),
-    path('grappelli/', include('grappelli.urls')),
+    # path('admin/filebrowser/', site.urls),
+    # path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('api/auth/', include('rest_framework.urls')),
-    path('tinymce/', include('tinymce.urls')),
+    # path('tinymce/', include('tinymce.urls')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
